@@ -1,8 +1,8 @@
-NAME			=	phone_book
+NAME			=	replace
 RUN				=	clang++
 FLAGS			=	-Wall -Wextra -Werror
 
-MEGAPHONE_CPP 	=	main.cpp PhoneBook.class.cpp libft.cpp
+MEGAPHONE_CPP 	=	main.cpp
 
 OBJ				=	$(MEGAPHONE_CPP:.cpp=.o)
 

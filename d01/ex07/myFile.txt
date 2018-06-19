@@ -1,0 +1,13 @@
+Hello man how do you do man? (man)?
+Hello man how do you do man? (man)?
+Hello man how do you do man? (man)?
+Hello man how do you do man? (man)?
+Hello man how do you do man? (man)?
+Hello MAN how do you do MAN? (MAN)?
+
+
+Hello man how do you do man? (man)?
+
+
+
+(REPLACE "MAN" in lower case)

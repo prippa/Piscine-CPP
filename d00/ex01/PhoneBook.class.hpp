@@ -1,13 +1,11 @@
 #ifndef PHONE_BOOK_HPP
 # define PHONE_BOOK_HPP
 
-# include <iostream>
+#include "libft.hpp"
 # include <iomanip>
 
 class PhoneBook
 {
-private:
-	std::string	getOutputStr_(std::string str) const;
 public:
 	std::string first_name;
 	std::string last_name;

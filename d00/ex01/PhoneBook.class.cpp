@@ -1,11 +1,5 @@
 #include "PhoneBook.class.hpp"
 
-std::string	PhoneBook::getOutputStr_(std::string str) const {
-	if (str.size() > 10)
-		return (str.substr(0, 9) + '.');
-	return (str);
-}
-
 PhoneBook::PhoneBook(void) {}
 PhoneBook::~PhoneBook(void) {}
 
@@ -26,33 +20,33 @@ void		PhoneBook::showAll(void) const {
 void		PhoneBook::showBase(int index) const {
 	std::cout
 	<< std::setw(10) << index << '|'
-	<< std::setw(10) << this->getOutputStr_(this->first_name) << '|'
-	<< std::setw(10) << this->getOutputStr_(this->last_name) << '|'
-	<< std::setw(10) << this->getOutputStr_(this->nickname)
+	<< std::setw(10) << getOutputStr(this->first_name) << '|'
+	<< std::setw(10) << getOutputStr(this->last_name) << '|'
+	<< std::setw(10) << getOutputStr(this->nickname)
 	<< std::endl;
 }
 
 void		PhoneBook::add(void) {
 	std::cout << "Enter (first name)      -> ";
-	std::getline(std::cin, this->first_name);
+	ft_getline(this->first_name);
 	std::cout << "Enter (last name)       -> ";
-	std::getline(std::cin, this->last_name);
+	ft_getline(this->last_name);
 	std::cout << "Enter (nickname)        -> ";
-	std::getline(std::cin, this->nickname);
+	ft_getline(this->nickname);
 	std::cout << "Enter (login)           -> ";
-	std::getline(std::cin, this->login);
+	ft_getline(this->login);
 	std::cout << "Enter (postal address)  -> ";
-	std::getline(std::cin, this->postal_address);
+	ft_getline(this->postal_address);
 	std::cout << "Enter (email address)   -> ";
-	std::getline(std::cin, this->email_address);
+	ft_getline(this->email_address);
 	std::cout << "Enter (phone number)    -> ";
-	std::getline(std::cin, this->phone_number);
+	ft_getline(this->phone_number);
 	std::cout << "Enter (birthday date)   -> ";
-	std::getline(std::cin, this->birthday_date);
+	ft_getline(this->birthday_date);
 	std::cout << "Enter (favorite meal)   -> ";
-	std::getline(std::cin, this->favorite_meal);
+	ft_getline(this->favorite_meal);
 	std::cout << "Enter (underwear color) -> ";
-	std::getline(std::cin, this->underwear_color);
+	ft_getline(this->underwear_color);
 	std::cout << "Enter (darkest secret)  -> ";
-	std::getline(std::cin, this->darkest_secret);
+	ft_getline(this->darkest_secret);
 }

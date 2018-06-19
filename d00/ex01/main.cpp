@@ -27,7 +27,7 @@ void	phSearchLogic(PhoneBook ph[PB_SIZE], int size)
 	for (int i = 0; i < size; ++i)
 		ph[i].showBase(i + 1);
 	std::cout << std::endl << "index -> ";
-	std::getline(std::cin, tmp);
+	ft_getline(tmp);
 	index = atoi(tmp.c_str());
 	if (index > 0 && index <= size)
 	{
@@ -35,6 +35,8 @@ void	phSearchLogic(PhoneBook ph[PB_SIZE], int size)
 		ph[index - 1].showAll();
 		std::cout << std::endl;
 	}
+	else
+		std::cout << "Invalid index!" << std::endl;
 }
 
 int		phAddLogic(PhoneBook ph[PB_SIZE], int size)
@@ -57,7 +59,7 @@ int		main(void)
 	while (-42)
 	{
 		std::cout << "enter command -> ";
-		std::getline(std::cin, cm);
+		ft_getline(cm);
 		cm = getLowerCaseString(cm);
 		if (cm == "add")
 		{
