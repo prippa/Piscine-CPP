@@ -6,7 +6,7 @@
 class Human
 {
 private:
-	Brain		brain_;
+	Brain const	brain_;
 public:
 	Human(void);
 	~Human(void);
