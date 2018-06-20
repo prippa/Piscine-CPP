@@ -6,7 +6,7 @@
 class HumanA
 {
 private:
-	Weapon * 	weapon_;
+	Weapon & 	weapon_;
 	std::string	name_;
 public:
 	void	attack(void);

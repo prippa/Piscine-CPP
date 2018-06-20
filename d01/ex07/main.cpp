@@ -31,7 +31,7 @@ void	doSomeMagic(std::string const & path,
 		buf += c;
 	ifs.close();
 
-	ofs.open(path);
+	ofs.open(path + ".replace");
 	if (!ofs.is_open())
 	{
 		std::cout << "Error with ofs.open file!" << std::endl;
