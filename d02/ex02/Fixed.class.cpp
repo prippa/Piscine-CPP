@@ -1,5 +1,7 @@
 #include "Fixed.class.hpp"
 
+int const Fixed::bits_ = 8;
+
 // Six comparison operators
 bool				Fixed::operator > (Fixed const & obj) const
 {

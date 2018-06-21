@@ -7,7 +7,7 @@ class Fixed
 {
 private:
 	int					raw_;
-	static const int	bits_ = 8;
+	static const int	bits_;
 public:
 	void	operator = (Fixed const & obj);
 	int 	getRawBits(void) const;

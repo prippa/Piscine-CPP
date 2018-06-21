@@ -8,7 +8,7 @@ class Fixed
 {
 private:
 	int					raw_;
-	static const int	bits_ = 8;
+	static const int	bits_;
 public:
 	// Six comparison operators
 	bool				operator > (Fixed const & obj) const;

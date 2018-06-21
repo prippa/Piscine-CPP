@@ -1,5 +1,7 @@
 #include "Fixed.class.hpp"
 
+int const Fixed::bits_ = 8;
+
 void	Fixed::operator = (Fixed const & obj)
 {
 	std::cout << "Assignation operator called" << std::endl;
