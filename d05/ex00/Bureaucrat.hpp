@@ -2,7 +2,6 @@
 # define BUREAUCRAT_HPP
 
 # include <iostream>
-// # include <stdexcept>
 
 class Bureaucrat
 {
