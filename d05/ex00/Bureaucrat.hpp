@@ -15,18 +15,12 @@ public:
 	class GradeTooHighException : public std::exception
 	{
 		public:
-			virtual const char* what() const throw()
-			{
-				return ("Exception with to High grade !");
-			}
+			virtual const char* what() const throw();
 	};
 	class GradeTooLowException : public std::exception
 	{
 		public:
-			virtual const char* what() const throw()
-			{
-				return ("Exception with to Low grade !");
-			}
+			virtual const char* what() const throw();
 	};
 
 	std::string	getName(void) const;
