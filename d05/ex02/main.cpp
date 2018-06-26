@@ -1,59 +1,105 @@
-#include "Form.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main(void)
 {
-	std::cout << "---------Bureaucrat------------" << std::endl;
-	Bureaucrat b1("Big_Boss", 1);
-	Bureaucrat expert("Expert", 15);
-	Bureaucrat intern("Intern", 150);
+	srand(time(NULL));
 
-	std::cout << b1 << std::endl;
-	std::cout << expert << std::endl;
-	std::cout << intern << std::endl;
+	std::cout << "/************ Forms execution ************\\" << std::endl;
 
-	std::cout << "---------Forms------------" << std::endl;
-	Form f_b1("from Big_Boss for Experts", 1, 15);
-	Form f_expert("from Experts for Interns", 15, 150);
+	std::cout << std::endl << "---> Create 2 Bureaucrat (Mike lvl 1 and John lvl 62)." <<std::endl;
+	Bureaucrat Buro1 = Bureaucrat("Mike", 1);
+	Bureaucrat Buro2 = Bureaucrat("John", 62);
 
-	std::cout << f_b1 << std::endl;
-	std::cout << f_expert << std::endl;
+	std::cout << "---> Create 3 forms with target names." <<std::endl;
+	PresidentialPardonForm PForm = PresidentialPardonForm("President");
+	ShrubberyCreationForm SForm = ShrubberyCreationForm("Retro");
+	RobotomyRequestForm RForm = RobotomyRequestForm("Bender");
 
-	std::cout << "---------try | catch------------" << std::endl;
+	std::cout << std::endl << "---> Execute Robot form (50% chances of success):" <<std::endl;
+	RForm.setSigned(true);
+	//exec robot
 	try
 	{
-		f_b1.beSigned(expert);
+		RForm.execute(Buro1);
 	}
-	catch(std::exception & e)
+	catch (std::exception & e)
 	{
 		std::cout << e.what() << std::endl;
 	}
-
+	//exec president not signed form
+	std::cout << std::endl << "---> Execute Presidential form (not signed):" <<std::endl;
 	try
 	{
-		intern.signForm(f_expert);
+		PForm.execute(Buro1);
 	}
-	catch(std::exception & e)
+	catch (std::exception & e)
 	{
 		std::cout << e.what() << std::endl;
 	}
-
+	//exec president signed form
+	std::cout << std::endl << "---> Sign & execute Presidential form:" <<std::endl;
+	PForm.setSigned(true);
 	try
 	{
-		b1.signForm(f_expert);
+		PForm.execute(Buro1);
 	}
-	catch(std::exception & e)
+	catch (std::exception & e)
 	{
 		std::cout << e.what() << std::endl;
 	}
-
+	// create tree file
+	std::cout << std::endl << "---> Sign & execute Shrubbery form:" <<std::endl;
+	SForm.setSigned(true);
 	try
 	{
-		b1.signForm(f_b1);
+		SForm.execute(Buro1);
 	}
-	catch(std::exception & e)
+	catch (std::exception & e)
 	{
 		std::cout << e.what() << std::endl;
 	}
-
+	std::cout << "(<target>_shrubbery file created)" << std::endl;
+	// fail form FROM bureaucrat
+	std::cout << std::endl << "---> John fail to sign Presidential form:" <<std::endl;
+	try
+	{
+		Buro2.executeForm(PForm);
+	}
+	catch (std::exception & e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	// exec president form from bureaucrat
+	std::cout << std::endl << "---> Mike execute Presidential form:" <<std::endl;
+	try
+	{
+		Buro1.executeForm(PForm);
+	}
+	catch (std::exception & e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+    // fail exec from form
+	std::cout << std::endl << "---> John fail to execute Shrubbery form:" <<std::endl;
+    try
+    {
+		PForm.execute(Buro2);
+    }
+    catch (std::exception & e)
+    {
+		std::cout << e.what() << std::endl;
+    }
+    // fail exec from form
+	std::cout << std::endl << "---> John fail to execute Robot form:" <<std::endl;
+    try
+    {
+		RForm.execute(Buro2);
+    }
+    catch (std::exception & e)
+    {
+		std::cout << e.what() << std::endl;
+    }
 	return (0);
 }
